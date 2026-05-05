@@ -1,0 +1,477 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  position: relative !important;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.custom-navbar{
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 999;
+  background: transparent;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(13px);
+  padding: 5px 18px;
+}
+
+.logo{
+  width: 10%;
+}
+
+.logo img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-position: left center;
+  object-fit: contain;
+}
+
+.menu-pill{
+  background-color: rgb(13, 13, 13);
+  border-radius: 50px;
+  opacity: 1;
+  padding: 10px;
+  gap: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.nav-link{
+  position: relative;
+  background-color: transparent;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 400;
+  padding: 8px 16px !important;
+  transition: transform 0.15s ease-out;
+  letter-spacing: 0.5px;
+  color: #fff;
+  font-family: "Unbounded", sans-serif;
+  overflow: hidden;
+}
+
+.nav-link::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.08);
+  border-radius: inherit;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.25s ease-out;
+  z-index: -1;
+}
+
+.nav-link:hover{
+  transform: scale(1.08);
+  color: #fff;
+}
+
+.nav-link:hover::before{
+  transform: scale(1);
+}
+
+.nav-link.active{
+  background-color: #262626;
+  color: #7454a8 !important;
+}
+
+.call-btn{
+  background-color: rgb(145, 84, 186);
+  font-family: "Unbounded", sans-serif;
+  border-radius: 60px;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  color: #fff;
+  border: 1px solid rgb(145, 84, 186);
+  font-size: 10px;
+}
+
+.call-btn .bi{
+  font-size: 8px;
+  padding-left: 10px;
+}
+
+.call-btn:hover{
+  background-color: #fff;
+  color: #2b2b2b;
+}
+
+.navbar-toggler{
+  border: none;
+  color: #fff;
+  font-size: 24px;
+}
+
+#hero{
+  position: relative;
+  padding-top: 100px;
+  width: 100%;
+   min-height: 100vh;
+  height: auto;
+  overflow: visible !important;
+  background: #000;
+}
+
+#hero::before{
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 260px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(140, 90, 200, 0.85) 0%,
+    rgba(140, 90, 200, 0.6) 30%,
+    rgba(140, 90, 200, 0.3) 55%,
+    transparent 75%
+  );
+  filter: blur(35px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, #000 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#hero .hero{
+  position: relative;
+  z-index: 2;
+}
+
+#hero .hero h3{
+  font-family: "Unbounded", sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.15);
+}
+
+#hero .hero h2{
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1.1;
+  padding: 14px 0;
+  letter-spacing: 0.5;
+  font-family: "Unbounded", sans-serif;
+  background: linear-gradient(to bottom, #69538D 0%, #d9d4ff 30%, #DADADA 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media(max-width:991px){
+  .custom-navbar{
+    width: 95%;
+    border-radius: 30px;
+  }
+
+  .menu-pill{
+    margin-top: 12px;
+    flex-direction: column;
+    background: rgba(0,0,0,0.9);
+    border-radius: 20px;
+    padding: 15px;
+  }
+
+  .nav-link{
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+.reviews {
+    margin-top: 30px;
+}
+
+.reviews h5 {
+    font-family: "Unbounded", sans-serif;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 13px;
+    font-size: 12px;
+    padding-top: 30px;
+}
+
+/* FULL WIDTH CARD FIX */
+.review-card {
+    position: relative;
+
+    width: calc(35% + 30px);
+    margin-left: -15px;
+    margin-right: -15px;
+
+    background: #0a0a0a;
+    padding: 7px 25px;
+
+    border-radius: 20px 20px 60px 60px;
+
+    box-shadow:
+        0 35px 40px -20px rgba(0,0,0,0.95),
+        inset 0 -10px 25px rgba(255,255,255,0.05);
+    overflow: hidden;
+}
+
+/* TOP LINE */
+.review-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 40px;
+    height: 1px;
+    background: rgba(255,255,255,0.12);
+}
+
+/* BOTTOM GLOW */
+.review-card::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 70px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,0.35),
+        rgba(255,255,255,0.08),
+        transparent 70%
+    );
+    filter: blur(25px);
+}
+
+/* INNER CONTENT */
+.review-inner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* GOOGLE ICON */
+.google-icon {
+    width: 42px;
+}
+
+/* TEXT */
+.review-text p {
+     font-family: "Unbounded", sans-serif;
+    margin: 0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* STARS */
+.stars {
+    color: #FFD700;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+}
+
+
+#book{
+  padding: 0px 0px 60px 0px;
+  width: 100%;
+  z-index: 99999;
+  height: auto;
+  background: #000;
+}
+
+#book .box {
+    margin-top: -100px;
+    z-index: 4;
+}
+
+#book .box p{
+    font-family: 'Satoshi', sans-serif;
+    color: #fff!important;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 50px;
+  border: none;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #7b4fd6 0%, #ff8a3d 100%);
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 20px;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+#btn i{
+    padding-left: 20px;
+}
+
+/* arrow direct text me hi hai */
+#btn:hover {
+ background-color: #7b4fd6;
+}
+
+
+
+#logos{
+     padding: 0px 0px 80px 0px;
+  width: 100%;
+  z-index: 99999;
+  height: auto;
+  background: #000;
+}
+
+
+.logos-box {
+  position: relative;
+  border-radius: 100px;
+  padding: 30px;
+margin: 0px 240px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #050505; 
+}
+
+/* ultra thin smooth border */
+.logos-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  padding-top: 1.8px;
+
+  background: linear-gradient(
+    -360deg,
+    #7b4fd6 0%,
+    #a855f7 30%,
+    #7b4fd6 100%
+  );
+  box-shadow: 0 -25px 40px -20px rgba(123, 79, 214, 0.6);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0.4; /* thin but visible */
+}
+
+/* very very subtle inner shine */
+.logos-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.03),
+    transparent 40%
+  );
+
+  pointer-events: none;
+}
+
+/* images */
+.logos-box img {
+  max-height: 60px;
+  width: auto;
+}
+
+/* center align */
+.logos-box .col-md-4 {
+  text-align: center;
+}
+
+
+
+#content{
+padding: 0px;
+  z-index: 99999;
+  height: auto;
+  background: #000;
+}
+#content .cont{
+    justify-content: space-between;
+    align-items: center;
+}
+#content .imgs{
+    width: 100%;
+}
+#content .imgs img{
+    width: 100%;
+
+
+}
+#content h5{
+    font-family: "Unbounded", sans-serif;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 0.5;
+    background-color: #2b2b2b;
+    border-radius: 100px;
+    padding: 12px 22px;
+    display: inline-block;
+}
+#content h5 i{
+    padding-right: 7px;
+    font-size: 12px;
+    color: #7454a8;
+}
+#content h2{
+      font-family: "Unbounded", sans-serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: #fff;
+      padding: 8px 0px ;
+}
+
+
+#content p{
+      font-family: 'Satoshi', sans-serif;
+    color: #fff!important;
+    font-size: 17px;
+    font-weight: 600;
+}
